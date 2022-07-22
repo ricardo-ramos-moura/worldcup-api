@@ -1,0 +1,29 @@
+server:
+  error:
+    include-stacktrace: on_param
+
+spring:
+  application:
+    name: World Cup Spring Boot Application
+  datasource:
+    url: jdbc:mysql://localhost:3306/worldcup?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, prometheus
+
+info:
+  app: Spring boot application by Ricardo Ramos
